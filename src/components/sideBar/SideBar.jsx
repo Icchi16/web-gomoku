@@ -1,3 +1,3 @@
 export default function SideBar() {
-  return <div>This is a sidebar</div>;
+  return <h2>This is a sidebar</h2>;
 }

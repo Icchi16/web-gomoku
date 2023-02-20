@@ -1,7 +1,3 @@
-export default function Page() {
-  return (
-    <>
-      <div>Hello World!</div>
-    </>
-  );
+export default async function Page(props) {
+  return <h1>Hello World!</h1>;
 }

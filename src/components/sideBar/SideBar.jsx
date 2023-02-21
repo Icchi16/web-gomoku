@@ -1,3 +1,9 @@
+import { Button } from "@nextui-org/react";
+
 export default function SideBar() {
-  return <h2>This is a sidebar</h2>;
+  return (
+    <>
+      <Button>New Game</Button>
+    </>
+  );
 }

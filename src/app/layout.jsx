@@ -1,7 +1,8 @@
 "use client";
 
-import SideBar from "../components/SideBar/SideBar";
+import SideBar from "../components/sideBar/SideBar";
 import { NextUIProvider, CssBaseline } from "@nextui-org/react";
+import { Container, Row, Col } from "@nextui-org/react";
 
 export default function RootLayout({ children }) {
   return (
@@ -9,8 +10,14 @@ export default function RootLayout({ children }) {
       <head>{CssBaseline.flush()}</head>
       <body>
         <NextUIProvider>
-          <SideBar />
-          {children}
+          <Container>
+            <Row>
+              <Col>
+                <SideBar />
+              </Col>
+              <Col>{children}</Col>
+            </Row>
+          </Container>
         </NextUIProvider>
       </body>
     </html>

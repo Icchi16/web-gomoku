@@ -1,8 +1,13 @@
 "use client";
 
-import SideBar from "../components/sideBar/SideBar";
-import { NextUIProvider, CssBaseline } from "@nextui-org/react";
-import { Container, Row, Col, css } from "@nextui-org/react";
+import SideBar, { SIDEBAR_SIZE } from "../components/sideBar/SideBar";
+import {
+  NextUIProvider,
+  CssBaseline,
+  Container,
+  Row,
+  Col,
+} from "@nextui-org/react";
 
 export default function RootLayout({ children }) {
   return (
@@ -11,8 +16,24 @@ export default function RootLayout({ children }) {
       <body>
         <NextUIProvider>
           <Container gap={0}>
-            <Row gap={0}>
-              <Col css={{ maxWidth: 3g00 }}>
+            <Row gap={0} css={{ position: "relative", height: "calc(100vh)" }}>
+              <Col
+                css={{
+                  maxWidth: SIDEBAR_SIZE,
+                  display: "flex",
+                  justifyContent: "center",
+                  "&::before": {
+                    content: "''",
+                    display: "block",
+                    position: "absolute",
+                    width: SIDEBAR_SIZE,
+                    backgroundColor: "$blue100",
+                    top: "0",
+                    left: "0",
+                    bottom: "0",
+                  },
+                }}
+              >
                 <SideBar />
               </Col>
               <Col>{children}</Col>

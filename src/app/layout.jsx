@@ -2,7 +2,7 @@
 
 import SideBar from "../components/sideBar/SideBar";
 import { NextUIProvider, CssBaseline } from "@nextui-org/react";
-import { Container, Row, Col } from "@nextui-org/react";
+import { Container, Row, Col, css } from "@nextui-org/react";
 
 export default function RootLayout({ children }) {
   return (
@@ -10,9 +10,9 @@ export default function RootLayout({ children }) {
       <head>{CssBaseline.flush()}</head>
       <body>
         <NextUIProvider>
-          <Container>
-            <Row>
-              <Col>
+          <Container gap={0}>
+            <Row gap={0}>
+              <Col css={{ maxWidth: 300 }}>
                 <SideBar />
               </Col>
               <Col>{children}</Col>

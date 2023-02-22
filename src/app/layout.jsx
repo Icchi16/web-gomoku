@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
         <NextUIProvider>
           <Container gap={0}>
             <Row gap={0}>
-              <Col css={{ maxWidth: 300 }}>
+              <Col css={{ maxWidth: 3g00 }}>
                 <SideBar />
               </Col>
               <Col>{children}</Col>

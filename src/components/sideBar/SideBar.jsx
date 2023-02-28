@@ -1,5 +1,6 @@
 import { css, Button } from "@nextui-org/react";
 import styles from "./SideBar.module.css";
+import ThemeSelector from "../themeSelector/ThemeSelector";
 
 export const SIDEBAR_SIZE = 230;
 
@@ -10,6 +11,9 @@ export default function SideBar() {
       <Button>VS Friend</Button>
       <Button>VS Bot</Button>
       <Button>Guide</Button>
+      <br />
+      <ThemeSelector />
+
       <div>Game make by SirIcchi16</div>
     </div>
   );

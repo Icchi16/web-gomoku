@@ -1,3 +1,9 @@
+import ScoreBoard from "../components/scoreBoard/ScoreBoard";
+
 export default async function Page() {
-  return <h1>Gomoku</h1>;
+  return (
+    <div>
+      <ScoreBoard />
+    </div>
+  );
 }

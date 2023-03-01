@@ -15,30 +15,28 @@ export default function RootLayout({ children }) {
       <head>{CssBaseline.flush()}</head>
       <body>
         <NextUIProvider>
-          <Container gap={0}>
-            <Row gap={0} css={{ position: "relative", height: "calc(100vh)" }}>
-              <Col
-                css={{
-                  maxWidth: SIDEBAR_SIZE,
-                  display: "flex",
-                  justifyContent: "center",
-                  "&::before": {
-                    content: "''",
-                    display: "block",
-                    position: "absolute",
-                    width: SIDEBAR_SIZE,
-                    backgroundColor: "$blue100",
-                    top: "0",
-                    left: "0",
-                    bottom: "0",
-                  },
-                }}
-              >
-                <SideBar />
-              </Col>
-              <Col>{children}</Col>
-            </Row>
-          </Container>
+          <Row gap={0} css={{ position: "relative", height: "calc(100vh)" }}>
+            <Col
+              css={{
+                maxWidth: SIDEBAR_SIZE,
+                display: "flex",
+                justifyContent: "center",
+                "&::before": {
+                  content: "''",
+                  display: "block",
+                  position: "absolute",
+                  width: SIDEBAR_SIZE,
+                  backgroundColor: "$blue100",
+                  top: "0",
+                  left: "0",
+                  bottom: "0",
+                },
+              }}
+            >
+              <SideBar />
+            </Col>
+            <Col>{children}</Col>
+          </Row>
         </NextUIProvider>
       </body>
     </html>

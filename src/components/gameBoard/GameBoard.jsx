@@ -1,9 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState, useEffect } from "react";
 
 export default function GameBoard() {
-  const [boardSize, setBoarSize] = useState(0);
+  const boardRef = useRef(null);
 
-  return <div>This is Game Board {boardSize}</div>;
+  const [boardSize, setBoardSize] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setBoardSize(boardRef.current.clientWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return <div ref={boardRef}>{boardSize}</div>;
 }
